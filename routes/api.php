@@ -6,4 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/download/{media}', [DownloadMediaController::class, 'show']);
 
-Route::get('/media', [MediaController::class, 'index']);
+Route::get('/media', [MediaController::class, 'index'])->middleware('auth:' . config('nova.guard'));
